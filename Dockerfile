@@ -24,9 +24,10 @@ COPY . .
 
 EXPOSE 5000
 
-#CMD  "python" "repository/database.py"  "runserver"  "0.0.0.0:5000"
 
-CMD  ["gunicorn", "--bind", "0.0.0.0:5000", "./web/techstack_app:app"]
+CMD [ "python", "./web/techstack_app.py" ]
+#CMD  "python" "repository/database.py"  "runserver"  "0.0.0.0:5000"
+#CMD  ["gunicorn", "--bind", "0.0.0.0:5000", "./web/techstack_app:app"]
 #ENV FLASK_APP="/python-feature-dev/web/techstack_app.py"
 #CMD ["flask", "run", "--host", "0.0.0.0"]
 #"--host=0.0.0.0"  "web/techstack_app.py" "--host=0.0.0.0"
